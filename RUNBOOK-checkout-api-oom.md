@@ -74,7 +74,7 @@ kubectl get deployment checkout-api -n checkout-api \
   -o jsonpath='{.spec.template.spec.containers[?(@.name=="checkout-api")].resources.limits.memory}{"\n"}'
 ```
 
-Restore the limit and request without editing unrelated settings:
+Restore the known-good request and limit without editing unrelated settings:
 
 ```bash
 kubectl set resources deployment/checkout-api -n checkout-api \
